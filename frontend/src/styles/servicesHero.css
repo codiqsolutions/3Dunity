@@ -1,0 +1,576 @@
+/* ==========================================================================
+   3Dunity - Services Hero Section Styles
+   Brand Colors:
+     Primary Blue: #087FC3 | Deep Navy: #173B70 | Green: #55B832 | Orange: #F59A16
+     Background: #F4F7FB   | White: #FFFFFF     | Primary Text: #252B36
+   ========================================================================== */
+
+.services-hero-section {
+  position: relative;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F4F7FB 85%, #EDF2F8 100%);
+  padding: 4.5rem 0 5rem;
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+/* Subtle Geometric Pattern and Radial Ambient Glow */
+.services-hero-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(8, 127, 195, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(8, 127, 195, 0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  opacity: 0.85;
+  mask-image: radial-gradient(ellipse at 60% 40%, black 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 60% 40%, black 20%, transparent 75%);
+}
+
+.services-hero-ambient-glow {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(8, 127, 195, 0.12) 0%, rgba(23, 59, 112, 0.04) 50%, transparent 70%);
+  pointer-events: none;
+  filter: blur(50px);
+}
+
+/* 2-Column Responsive Layout */
+.services-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 3.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 1024px) {
+  .services-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* ==========================================================================
+   Left Column: Content & Typography
+   ========================================================================== */
+.services-hero-content {
+  display: flex;
+  flex-direction: column;
+  animation: heroContentFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes heroContentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Small Label Badge */
+.services-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-primary-light);
+  border: 1px solid rgba(8, 127, 195, 0.25);
+  color: var(--color-primary);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+  align-self: flex-start;
+  box-shadow: 0 2px 8px rgba(8, 127, 195, 0.1);
+}
+
+.services-badge-icon {
+  color: var(--color-primary);
+}
+
+/* Main Heading */
+.services-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 4.2vw, 3.4rem);
+  font-weight: 800;
+  color: var(--color-navy);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.25rem;
+}
+
+.services-title-highlight {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0369a1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+}
+
+/* Description */
+.services-hero-description {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.68;
+  max-width: 580px;
+  margin: 0 0 1.85rem;
+}
+
+/* Trust Metric Pills */
+.services-hero-trust-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2.25rem;
+}
+
+.trust-pill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 0.45rem 1rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--color-text);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: all var(--transition-fast);
+}
+
+.trust-pill-item:hover {
+  border-color: rgba(8, 127, 195, 0.35);
+  box-shadow: 0 4px 12px rgba(8, 127, 195, 0.12);
+  transform: translateY(-1px);
+}
+
+.trust-pill-icon.blue {
+  color: var(--color-primary);
+}
+
+.trust-pill-icon.orange {
+  color: var(--color-orange);
+}
+
+.trust-pill-icon.green {
+  color: var(--color-green);
+}
+
+/* CTA Buttons Group */
+.services-hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Primary Button: Explore Our Services */
+.services-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.95rem 1.85rem;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 22px rgba(8, 127, 195, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.services-primary-btn:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(8, 127, 195, 0.48);
+}
+
+.btn-bounce-icon {
+  transition: transform 0.25s ease;
+}
+
+.services-primary-btn:hover .btn-bounce-icon {
+  transform: translateY(3px);
+}
+
+/* Secondary Button: Start a Custom Project */
+.services-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background-color: #FFFFFF;
+  color: var(--color-navy);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.95rem 1.85rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-border);
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.services-secondary-btn:hover {
+  border-color: var(--color-navy);
+  color: var(--color-navy-dark);
+  background-color: #F8FAFC;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(23, 59, 112, 0.12);
+}
+
+/* ==========================================================================
+   Right Column: Asymmetric 3D Product Visual Composition
+   ========================================================================== */
+.services-hero-visual-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: heroVisualFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.15s;
+}
+
+@keyframes heroVisualFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.services-composition-stage {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  height: 480px;
+}
+
+@media (max-width: 640px) {
+  .services-composition-stage {
+    height: 400px;
+  }
+}
+
+/* 3D Wireframe Graphic in Background */
+.decorative-3d-wireframe {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  z-index: 1;
+  pointer-events: none;
+  animation: subtleSpin 36s linear infinite;
+}
+
+@keyframes subtleSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Product Cards in Stage */
+.services-product-card {
+  position: absolute;
+  border-radius: 18px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 12px 30px rgba(23, 59, 112, 0.1);
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.services-product-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(8, 127, 195, 0.45);
+  box-shadow: 0 20px 42px rgba(8, 127, 195, 0.2);
+  z-index: 10 !important;
+}
+
+.product-card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #0F172A;
+}
+
+.product-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.services-product-card:hover .product-card-img {
+  transform: scale(1.08);
+}
+
+.product-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0) 40%, rgba(15, 23, 42, 0.7) 100%);
+  pointer-events: none;
+}
+
+.product-card-info-badge {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  padding: 0.65rem 0.85rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  z-index: 2;
+}
+
+.product-card-info-badge.compact {
+  padding: 0.5rem 0.75rem;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.badge-dot.blue {
+  background-color: var(--color-primary);
+  box-shadow: 0 0 0 2.5px rgba(8, 127, 195, 0.25);
+}
+
+.badge-dot.orange {
+  background-color: var(--color-orange);
+  box-shadow: 0 0 0 2.5px rgba(245, 154, 22, 0.25);
+}
+
+.badge-dot.green {
+  background-color: var(--color-green);
+  box-shadow: 0 0 0 2.5px rgba(85, 184, 50, 0.25);
+}
+
+.badge-dot.navy {
+  background-color: var(--color-navy);
+  box-shadow: 0 0 0 2.5px rgba(23, 59, 112, 0.25);
+}
+
+.card-info-title {
+  font-family: var(--font-display);
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: 1.2;
+}
+
+.card-info-subtitle {
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+  line-height: 1.25;
+}
+
+/* Card 1: Main Architectural Model (Anchor center-left) */
+.services-product-card.card-architectural {
+  top: 40px;
+  left: 20px;
+  width: 275px;
+  height: 255px;
+  z-index: 3;
+}
+
+/* Card 2: Decorative Spiral Vase (Top-Right) */
+.services-product-card.card-decorative {
+  top: 10px;
+  right: 15px;
+  width: 215px;
+  height: 195px;
+  z-index: 2;
+}
+
+/* Card 3: Customized Astronaut Figurine (Bottom-Left) */
+.services-product-card.card-figurine {
+  bottom: 25px;
+  left: 5px;
+  width: 205px;
+  height: 185px;
+  z-index: 4;
+}
+
+/* Card 4: Functional Gear Prototype (Bottom-Right) */
+.services-product-card.card-prototype {
+  bottom: 35px;
+  right: 25px;
+  width: 245px;
+  height: 215px;
+  z-index: 5;
+}
+
+/* Floating Precision Spec Pill Badge */
+.floating-spec-pill {
+  position: absolute;
+  top: -15px;
+  left: 30px;
+  z-index: 6;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.775rem;
+  color: var(--color-navy);
+  animation: gentleFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes gentleFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
+}
+
+.pulse-indicator {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-green);
+}
+
+.pulse-ring {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-green);
+  opacity: 0.75;
+  animation: pulseRingAnim 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulseRingAnim {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   Mobile & Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 640px) {
+  .services-hero-section {
+    padding: 3rem 0 3.5rem;
+  }
+
+  .services-hero-title {
+    font-size: 2.15rem;
+  }
+
+  .services-hero-description {
+    font-size: 1rem;
+  }
+
+  .services-hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .services-primary-btn,
+  .services-secondary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Compact overlapping visual arrangement on small phones */
+  .services-composition-stage {
+    max-width: 360px;
+    height: 340px;
+    margin: 0 auto;
+  }
+
+  .services-product-card.card-architectural {
+    width: 190px;
+    height: 175px;
+    top: 25px;
+    left: 5px;
+  }
+
+  .services-product-card.card-decorative {
+    width: 155px;
+    height: 145px;
+    top: 10px;
+    right: 5px;
+  }
+
+  .services-product-card.card-figurine {
+    width: 150px;
+    height: 140px;
+    bottom: 10px;
+    left: 5px;
+  }
+
+  .services-product-card.card-prototype {
+    width: 180px;
+    height: 160px;
+    bottom: 15px;
+    right: 5px;
+  }
+
+  .floating-spec-pill {
+    top: -10px;
+    left: 10px;
+    font-size: 0.72rem;
+  }
+}
+
+/* Reduced Motion Mode */
+@media (prefers-reduced-motion: reduce) {
+  .services-hero-content,
+  .services-hero-visual-wrapper,
+  .decorative-3d-wireframe,
+  .floating-spec-pill,
+  .pulse-ring,
+  .services-product-card,
+  .product-card-img {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+

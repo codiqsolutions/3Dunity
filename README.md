@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 3D Unity — Full-Stack 3D Printing Business Website
 
 **Business:** 3D Unity | Surat, Gujarat, India  
@@ -205,3 +206,7 @@ npm run build
 - WhatsApp Business integration via direct wa.me links
 - Pan India delivery supported
 
+=======
+# 3Dunity
+# 3Dunity
+>>>>>>> 735266e7bba39ee6bdb811daf2b5e51cf3598620
